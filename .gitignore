@@ -1,0 +1,12 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Virtual env
+venv/
+
+# Environment variables
+.env
+
+# Editor swap files
+*.swp
