@@ -22,13 +22,20 @@ def index():
     conn = mysql.connector.connect(**DB_CONFIG)
     cur = conn.cursor(dictionary=True)
     cur.execute("""
-      SELECT t.tid, e.sender, e.subject, e.body, e.fetched_at
+      SELECT
+        t.tid,
+        e.sender,
+        e.subject,
+        e.body,
+        e.sent_at,
+        e.fetched_at
       FROM emails e
       JOIN tasks t ON e.task_id = t.id
       ORDER BY e.fetched_at DESC
     """)
     rows = cur.fetchall()
-    cur.close(); conn.close()
+    cur.close()
+    conn.close()
     return render_template('emails.html', emails=rows)
 
 @app.route('/fetch')

@@ -1,0 +1,26 @@
+/* lighter background for the page */
+body {
+  background-color: #f1f7fa;
+}
+
+/* tiny extra spacing on table cells */
+.table td,
+.table th {
+  padding: 0.75rem 1rem;
+}
+
+/* make the body‐cell scroll on overflow, with max height */
+.body-cell pre {
+  max-height: 100px;
+  overflow-y: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* subtle shadow around the table */
+.table-responsive.shadow-sm {
+  background: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
